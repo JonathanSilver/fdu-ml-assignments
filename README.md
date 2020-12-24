@@ -4,6 +4,8 @@
 
 *课程pj参考另一个[repo](https://github.com/JonathanSilver/modelarts)！*
 
+教材：[Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/)
+
 ## 依赖
 - scikit-learn
 - matplotlib
