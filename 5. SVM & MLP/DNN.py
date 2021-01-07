@@ -22,6 +22,7 @@ By the way, do not expect this tutorial-like script to out-
 perform Tensorflow/PyTorch. This is obviously not possible.
 """
 
+
 import numpy as np
 import struct
 from copy import deepcopy
@@ -257,11 +258,11 @@ class DNNClassifier:
 if __name__ == '__main__':
     np.random.seed(1)
     y_true = np.argmax(test_labels, axis=-1)
-    y_pred = DNNClassifier([SIZE, 100, N_CLASSES]) \
+    model = DNNClassifier([SIZE, 100, N_CLASSES]) \
         .train(train_images, train_labels, test_images, test_labels,
                batch_size=100, n_epochs=100, patience=5,
-               optimizer=RMSProp(1e-2))(test_images)
-    y_pred = np.argmax(y_pred, axis=-1)
+               optimizer=RMSProp(1e-2))
+    y_pred = np.argmax(model(test_images), axis=-1)
     print(classification_report(y_true, y_pred, digits=4))
 
     # using the above settings, in my computer, it
